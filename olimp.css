@@ -656,7 +656,9 @@ img {
 .pets__tab-content-wrapper {
   width: 100%;
 }
-
+.pets__tab--active {
+ opacity: 1 !important;
+}
 .pets__wrapper {
   padding-top: 223px;
   padding-bottom: 21px;
