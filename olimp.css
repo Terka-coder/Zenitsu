@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+
  html {
   line-height: 1.15;
   /* 1 */
@@ -579,6 +580,11 @@ img {
   transition: color 0.3s ease-out, border 0.3s ease-out;
   margin-bottom: 110px;
 }
+.header__btn:hover {
+  color: #000;
+  background: #a07b50;
+  transition: all 500ms ease-out;
+}
 
 
 .slider {
@@ -690,6 +696,12 @@ img {
 .pets__item {
   margin-right: auto;
 }
+.pets__item:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: all 150ms ease-out;
+}
 
 .pets__item:last-of-type {
   margin-right: 0;
@@ -752,7 +764,11 @@ img {
   padding: 18px;
   transition: color 0.3s ease-out, border 0.3s ease-out;
 }
-
+.pets__btn:hover {
+  color: #000;
+  background: #a07b50;
+  transition: all 500ms ease-out;
+}
 .gallery {
   display: block;
   width: 100%;
@@ -896,7 +912,6 @@ img {
   color: #ffffff;
   position: relative;
 }
-
 .breed-features__item::before {
   content: "";
   position: absolute;
@@ -915,6 +930,10 @@ img {
   max-width: 255px;
   text-align: right;
 }
+.breed-features__item--cohabitation:hover {
+  padding-right: 20px;
+  transition: all 200ms ease-out;
+}
 
 .breed-features__item--cohabitation::before {
   right: -39px;
@@ -925,7 +944,10 @@ img {
   right: -482px;
   max-width: 201px;
 }
-
+.breed-features__item--instruction:hover {
+  padding-left: 20px;
+  transition: all 200ms ease-out;
+}
 .breed-features__item--instruction::before {
   top: 3px;
   left: -36px;
@@ -936,7 +958,10 @@ img {
   right: -444px;
   max-width: 160px;
 }
-
+.breed-features__item--weight:hover {
+  padding-left: 5px;
+  transition: all 200ms ease-out;
+}
 .breed-features__item--weight::before {
   top: 6px;
   left: -33px;
@@ -948,7 +973,10 @@ img {
   left: -370px;
   text-align: right;
 }
-
+.breed-features__item--appearance:hover {
+  padding-right: 10px;
+  transition: all 200ms ease-out;
+}
 .breed-features__item--appearance::before {
   right: -31px;
 }
@@ -973,6 +1001,13 @@ img {
     left: -295px;
     max-width: 140px;
   }
+}
+.list__btn {
+  padding-right: 10px;
+}
+.list__btn:hover {
+  padding-left: 70px;
+  transition: all 150ms ease-in;
 }
 
 .advantages {
@@ -1016,7 +1051,6 @@ img {
 .advantages__item:last-of-type {
   margin-right: 0;
 }
-
 .advantages__link {
   display: block;
   max-width: 320px;
@@ -1071,4 +1105,284 @@ img {
 
 .show {
   display: block;
+}
+.red_cat {
+background-image: url("red_cat.png");
+position: absolute;
+left: 726px;
+top: 42px;
+width: 640px;
+height: 642px;
+z-index: 4;
+}
+.push {
+  list-style: none;
+}
+.push li {
+  position: relative;
+  padding: 10px 0 40px 60px;
+  color: #ffffff;
+  font-weight: bold;
+  
+  
+}
+.push li:before {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a07b50;
+  content: "";
+  left: 0;
+  transition: .3s ease-in-out;
+  top: 27px;
+}
+.push li:after {
+  position: absolute;
+  border-left: 1px dotted #4F5151;
+  width: 1px;
+  bottom: -12px;
+  content: "";
+  left: 3px;
+  top: 48px;
+}
+.push li:hover:before{box-shadow: 0 0 0 10px rgba(0,0,0,.2)}
+.push li:last-child:after {content: none;}
+.modal {
+
+    /* Overlay page content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
+
+    /* Transition opacity on open */
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+
+    /* Hide for now */
+    opacity: 0;
+    pointer-events: none;
+}
+&:before{
+    position: absolute;
+    content: '';
+    width: 0%; height: 100%;
+    background: $primaryColor;
+    top: 0; left: 50%;
+    z-index: -1;
+    transition: all 0ms ease;
+  }
+
+/* Show modal */
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    /* at time of writing (Feb 2012), pointer-events not supported by Opera or IE */
+}
+
+/* Content */
+.modal > div {
+    width: 500px;
+    background: #fff;
+    position: relative;
+    margin: 10% auto;
+
+    /* Default minimise animation */
+    -webkit-animation: minimise 500ms linear;
+    -moz-animation: minimise 500ms linear;
+    animation: minimise 500ms linear;
+
+    /* Prettify */
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+    background: linear-gradient(#fff, #ccc);
+    text-shadow: 0 1px 0 #fff;
+}
+
+.gallery__item:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: all 150ms ease-out;
+}
+
+/* Override animation on modal open */
+.modal:target > div {
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    animation-name: bounce;
+}
+
+.modal h2 {
+    font-size: 36px;
+    padding: 0 0 20px;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+    -webkit-transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+    -webkit-transform: scale3d(1,1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@-webkit-keyframes minimise {
+  0% {
+    -webkit-transform: scale3d(1,1,1);
+  }
+  100% {
+    -webkit-transform: scale3d(0.1,0.1,1);
+  }
+}
+
+@-moz-keyframes bounce {
+  0% {
+    -moz-transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+    -moz-transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    -moz-transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+    -moz-transform: scale3d(1,1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@-moz-keyframes minimise {
+  0% {
+    -moz-transform: scale3d(1,1,1);
+  }
+  100% {
+    -moz-transform: scale3d(0.1,0.1,1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale3d(0.1,0.1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+    transform: scale3d(1.08,1.08,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+    transform: scale3d(0.95,0.95,1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+    transform: scale3d(1,1,1);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@keyframes minimise {
+  0% {
+    transform: scale3d(1,1,1);
+  }
+  100% {
+    transform: scale3d(0.1,0.1,1);
+  }
+}
+
+/* Modal close link */
+.modal a[href="#close"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent;
+}
+
+/* Reset native styles */
+.modal a[href="#close"]:focus {
+    outline: none;
+}
+
+/* Create close button */
+.modal a[href="#close"]:after {
+    content: 'X';
+    display: block;
+
+    /* Position */
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 1.5em;
+    padding: 1px 1px 1px 2px;
+
+    /* Style */
+    text-decoration: none;
+    text-shadow: none;
+    text-align: center;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .modal a[href="#close"]:focus:after,
+    .modal a[href="#close"]:hover:after {
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    transform: scale(1.1,1.1);
+}
+
+.modal a[href="#close"]:focus:after {
+    outline: 1px solid #000;
+}
+
+/* Open modal */
+a.openModal {
+    margin: 1em auto;
+    display: block;
+    width: 200px;
+    background: #ccc;
+    text-align: center;
+    padding: 10px;
+    border-radius: 7px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #ddd);
+    background: -webkit-linear-gradient(#fff, #ddd);
+    background: -o-linear-gradient(#fff, #ddd);
+    background: linear-gradient(#fff, #ddd);
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+a.openModal:hover,
+a.openModal:focus {
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-linear-gradient(#fff, #ccc);
+    background: -o-linear-gradient(#fff, #ccc);
+    background: linear-gradient(#fff, #ccc);
 }
